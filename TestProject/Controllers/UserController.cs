@@ -8,6 +8,7 @@ using Work.Models;
 using Newtonsoft.Json;
 using Work.Interfaces;
 using Work.Controllers.Models.Mappers;
+using Microsoft.Extensions.Logging;
 
 namespace Work.Controllers
 {
@@ -16,18 +17,22 @@ namespace Work.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserRepository<User, Guid> _userRepository;
+        private readonly ILogger<UserController> _logger;
 
-        public UserController(IUserRepository<User, Guid> userRepository)
+        public UserController(IUserRepository<User, Guid> userRepository, ILogger<UserController> logger)
         {
             _userRepository = userRepository;
+            _logger = logger;
         }
 
         [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
+            _logger.LogInformation($"Getting user with Id {id}");
             var user = _userRepository.Read(id);
             if (user == null)
             {
+                _logger.LogWarning($"User not found with Id {id}");
                 return NotFound(new { message = $"User not found with Id {id}" });
             }
 
