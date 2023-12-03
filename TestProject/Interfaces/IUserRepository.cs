@@ -1,5 +1,6 @@
 ﻿namespace Work.Interfaces
 {
+    // IUserRepository interface
     public interface IUserRepository<T,K>
     {
         void Create(T obj);
