@@ -15,6 +15,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<MockDatabase>(_ => new MockDatabase(10)); // Registering MockDatabase 
 builder.Services.AddSingleton<IUserRepository<User, Guid>, UserRepository>(); // Registering UserRepository
 
+builder.Logging.AddConsole();
+builder.Logging.AddDebug();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
