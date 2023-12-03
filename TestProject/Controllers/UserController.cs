@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Work.ApiModels;
+using Work.Controllers.Models;
 
 namespace Work.Controllers
 {
@@ -12,12 +12,12 @@ namespace Work.Controllers
             throw new NotImplementedException("TODO");
         }
 
-        public IActionResult Post(UserModelDto user)
+        public IActionResult Post(UserDto user)
         {
             throw new NotImplementedException("TODO");
         }
         
-        public IActionResult Put(UserModelDto user)
+        public IActionResult Put(UserDto user)
         {
             throw new NotImplementedException("TODO");
         }

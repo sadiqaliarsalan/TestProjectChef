@@ -1,4 +1,6 @@
-﻿namespace Work.Database
+﻿using Work.Models;
+
+namespace Work.Data
 {
     public class MockDatabase
     {

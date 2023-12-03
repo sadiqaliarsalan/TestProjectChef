@@ -1,6 +1,6 @@
-﻿namespace Work.ApiModels
+﻿namespace Work.Controllers.Models
 {
-    public class UserModelDto
+    public class UserDto
     {
         public Guid Id { get; set; }
 
