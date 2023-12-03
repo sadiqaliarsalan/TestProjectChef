@@ -2,6 +2,7 @@
 
 namespace Work.Data
 {
+    // MockDatabase class. Used for mocking users in memory
     public class MockDatabase
     {
         public Dictionary<Guid, User> Users { get; private set; }

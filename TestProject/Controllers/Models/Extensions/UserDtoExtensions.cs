@@ -2,6 +2,7 @@
 
 namespace Work.Controllers.Models.Extensions
 {
+    // UserDtoExtensions class. Used to validation purpose on UserDto object
     public static class UserDtoExtensions
     {
         public static bool IsValid(this UserDto userDto, out string validationMessage)

@@ -4,6 +4,7 @@ using Work.Models;
 
 namespace Work.Implementation
 {
+    // IUserRepository interface implementation
     public class UserRepository : IUserRepository<User, Guid>
     {
         private readonly MockDatabase _mockedDatabase;
