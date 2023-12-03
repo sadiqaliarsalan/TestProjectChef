@@ -1,4 +1,4 @@
-﻿namespace Work.Controllers.Models
+﻿namespace Work.Controllers.Models.DTOs
 {
     public class UserDto
     {
