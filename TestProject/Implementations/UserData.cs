@@ -1,18 +1,18 @@
-﻿using Work.Models;
+﻿using Work.Interfaces;
+using Work.Models;
 
-namespace Work.Data
+namespace Work.Implementations
 {
-    // MockDatabase class. Used for mocking users in memory
-    public class MockDatabase
+    public class UserData : IUserData
     {
         public Dictionary<Guid, User> Users { get; private set; }
 
-        public MockDatabase(Dictionary<Guid, User> users)
+        public UserData(Dictionary<Guid, User> users)
         {
             Users = users;
         }
 
-        public MockDatabase(int seed)
+        public UserData(int seed)
         {
             Users = new Dictionary<Guid, User>();
             for (int i = 0; i < seed; i++)

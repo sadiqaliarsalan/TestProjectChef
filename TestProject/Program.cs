@@ -1,5 +1,5 @@
-using Work.Data;
 using Work.Implementation;
+using Work.Implementations;
 using Work.Interfaces;
 using Work.Models;
 
@@ -12,8 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<MockDatabase>(_ => new MockDatabase(10)); // Registering MockDatabase 
-builder.Services.AddSingleton<IUserRepository<User, Guid>, UserRepository>(); // Registering UserRepository
+builder.Services.AddSingleton<IUserData>(_ => new UserData(10)); // Registering UserData 
+builder.Services.AddSingleton<IUserManager<User, Guid>, UserManager>(); // Registering UserManager
 
 builder.Logging.AddConsole();
 builder.Logging.AddDebug();
