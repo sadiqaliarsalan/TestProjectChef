@@ -10,9 +10,9 @@ namespace Work.Controllers.Models.Mappers
         {
             return new User
             {
-                UserId = Guid.NewGuid(),
-                UserName = userDto.Name,
-                Birthday = userDto.Birthdate
+                UserId = userDto.UserId,
+                UserName = userDto.UserName,
+                Birthday = (DateTime)userDto.Birthday
             };
         }
     }
